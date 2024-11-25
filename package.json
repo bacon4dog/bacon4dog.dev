@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/kit": "^2.8.2",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.0",
 		"@unocss/extractor-svelte": "^0.64.1",
@@ -23,11 +23,11 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
 		"prettier": "^3.3.2",
-		"prettier-plugin-svelte": "^3.2.6",
+		"prettier-plugin-svelte": "^3.3.2",
 		"sass-embedded": "^1.81.0",
 		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
+		"svelte-check": "^4.1.0",
+		"typescript": "^5.7.2",
 		"typescript-eslint": "^8.0.0",
 		"unocss": "^0.64.1",
 		"vite": "^5.0.3"
