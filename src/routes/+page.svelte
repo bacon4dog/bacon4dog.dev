@@ -6,8 +6,14 @@
 		'培根是條狗，是一位過著狗一般血汗生活的軟體工程師。雖然職稱是後端工程師，但他實際包辦了從前端開發、後端架構、系統部署、雲端維運到測試自動化的一條龍開發。每個專案的開發週期都短得驚人，需求天天改，系統也經常重寫。面對各種任務與需求變更，「收到」始終是他的標準回覆。名字的由來是因為他天天被煎烤得跟培根一樣，但好在高溫持續煎烤後的培根特別香，就如同他交付的每個專案一樣，總是香氣四溢。';
 	const keywords = '培根是條狗, bacon4dog, 軟體工程師, 前端工程師, 後端工程師, 全端工程師';
 	const texts = [
-		{ text: '培根是條狗', size: '80pt' },
-		{ text: '@bacon4dog', size: '60pt' }
+		{
+			text: '培根是條狗',
+			size: 'clamp(3.5rem, 8vw, 80pt)'
+		},
+		{
+			text: '@bacon4dog',
+			size: 'clamp(2.75rem, 6vw, 60pt)'
+		}
 	];
 	const morphTime: number = 1;
 	const cooldownTime: number = 1;
