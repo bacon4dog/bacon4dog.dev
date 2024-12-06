@@ -126,12 +126,6 @@
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap"
-		rel="stylesheet"
-	/>
 </svelte:head>
 
 <!-- Main Content -->
@@ -140,7 +134,7 @@
 		<a
 			href="https://github.com/bacon4dog"
 			aria-label="Visit bacon4dog's GitHub profile"
-			class="lxgw-wenkai-tc-bold"
+			class="lxgw-wenkai-tc"
 		>
 			<span bind:this={text1}></span>
 			<span bind:this={text2}></span>
@@ -189,13 +183,6 @@
 		user-select: none;
 		color: white;
 		top: 50%;
-	}
-
-	/* Font Styles */
-	.lxgw-wenkai-tc-bold {
-		font-family: 'LXGW WenKai TC', cursive;
-		font-weight: 700;
-		font-style: normal;
 	}
 
 	/* Filter Styles */
