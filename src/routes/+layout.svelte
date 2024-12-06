@@ -59,7 +59,7 @@
 				system-ui,
 				-apple-system,
 				sans-serif;
-			font-weight: 500;
+			font-weight: 700;
 		}
 	}
 
