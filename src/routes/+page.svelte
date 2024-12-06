@@ -26,15 +26,15 @@
 	// Animation Functions
 	function setMorph(fraction: number): void {
 		text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-		text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+		text2.style.opacity = `${fraction ** 0.4 * 100}%`;
 
 		fraction = 1 - fraction;
 		text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-		text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+		text1.style.opacity = `${fraction ** 0.4 * 100}%`;
 
 		const currentText = texts[textIndex % texts.length];
 		const nextText = texts[(textIndex + 1) % texts.length];
-		
+
 		text1.textContent = currentText.text;
 		text2.textContent = nextText.text;
 		text1.style.fontSize = currentText.size;
@@ -70,9 +70,9 @@
 
 		requestAnimationFrame(animate);
 
-		let newTime: Date = new Date();
-		let shouldIncrementIndex: boolean = cooldown > 0;
-		let dt: number = (newTime.getTime() - time.getTime()) / 1000;
+		const newTime: Date = new Date();
+		const shouldIncrementIndex: boolean = cooldown > 0;
+		const dt: number = (newTime.getTime() - time.getTime()) / 1000;
 		time = newTime;
 
 		cooldown -= dt;
@@ -91,7 +91,7 @@
 	onMount(() => {
 		const currentText = texts[textIndex % texts.length];
 		const nextText = texts[(textIndex + 1) % texts.length];
-		
+
 		text1.textContent = currentText.text;
 		text2.textContent = nextText.text;
 		text1.style.fontSize = currentText.size;
@@ -122,13 +122,20 @@
 	<meta name="twitter:description" content={description} />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap"
+		rel="stylesheet"
+	/>
 </svelte:head>
 
 <!-- Main Content -->
 <div class="grid place-items-center w-full h-full">
 	<div id="container">
-		<a href="https://github.com/bacon4dog" aria-label="Visit bacon4dog's GitHub profile" class="lxgw-wenkai-tc-bold">
+		<a
+			href="https://github.com/bacon4dog"
+			aria-label="Visit bacon4dog's GitHub profile"
+			class="lxgw-wenkai-tc-bold"
+		>
 			<span bind:this={text1}></span>
 			<span bind:this={text2}></span>
 		</a>
@@ -143,9 +150,9 @@
 				in="SourceGraphic"
 				type="matrix"
 				values="1 0 0 0 0
-						0 1 0 0 0
-						0 0 1 0 0
-						0 0 0 255 -140"
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 255 -140"
 			/>
 		</filter>
 	</defs>
@@ -180,15 +187,15 @@
 
 	/* Font Styles */
 	.lxgw-wenkai-tc-bold {
-  font-family: "LXGW WenKai TC", cursive;
-  font-weight: 700;
-  font-style: normal;
-}
+		font-family: 'LXGW WenKai TC', cursive;
+		font-weight: 700;
+		font-style: normal;
+	}
 
 	/* Filter Styles */
 	#filters {
 		position: absolute;
-			visibility: hidden;
+		visibility: hidden;
 	}
 
 	/* Animation Styles */

@@ -1,0 +1,93 @@
+name: 🐛 問題回報
+description: Bug report | 問題回報表單
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        這裡是問題報修表單。
+
+        填寫時，請注意：
+        - 描述請簡潔、具體、明確。
+        - 善用條列式敘述、圖片、或操作影片。
+        - 請先確認是否有相似的問題已被回報。
+        - 若有截圖或影片，可直接拖曳至表單中。
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 🐛 當前問題 Bug Description
+      description: |
+        [必填] 描述當前問題。請盡可能詳細說明遇到的問題。
+      placeholder: 當我嘗試...時，發生了...的問題
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-description
+    attributes:
+      label: ⚗️ 預期結果 Expected Behavior
+      description: |
+        [必填] 描述預期結果。請說明您期望看到的正確行為。
+      placeholder: 正確的情況下應該要...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 🧪 重現問題 Reproduction
+      description: |
+        [必填] 描述重現問題的步驟。請提供詳細的操作步驟，讓我們能夠重現此問題。
+
+        範例:
+        1. 打開 URL '...'
+        2. 點選 '...' 按鈕
+        3. 滾動至 '...'
+        4. 出現錯誤
+      placeholder: 請提供明確的重現步驟
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 🌐 使用的瀏覽器 Browser
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - 其他 (請在環境資訊中說明)
+    validations:
+      required: true
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: 🍱 環境資訊 System Info
+      description: |
+        [必填] 描述作業系統、瀏覽器版本、電腦/手機/平台。
+
+        範例:
+        - **作業系統**: Windows 11 / macOS 13.0 / iOS 16
+        - **瀏覽器版本**: Chrome 108.0.5359.124
+        - **裝置**: iPhone 13 / Desktop
+        - **螢幕解析度**: 1920x1080
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 備註事項 Additional Context
+      description: |
+        [選填] 描述其他須注意事情，例如：
+        - 問題發生的頻率
+        - 可能的原因
+        - 嘗試過的解決方案
+      placeholder: 無
+    validations:
+      required: false

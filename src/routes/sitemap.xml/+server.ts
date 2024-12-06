@@ -1,11 +1,11 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-type Route = {
+interface Route {
 	path: string;
 	lastmod?: string;
 	changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
 	priority?: number;
-};
+}
 
 const routes: Route[] = [
 	{

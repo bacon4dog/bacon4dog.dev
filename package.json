@@ -1,11 +1,14 @@
 {
 	"name": "bacon4dog",
-	"version": "0.0.1",
 	"type": "module",
+	"version": "1.0.0",
+	"private": true,
+	"packageManager": "pnpm@9.14.4",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"prepare": "npx simple-git-hooks",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
@@ -23,14 +26,28 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.46.1",
 		"globals": "^15.13.0",
+		"lint-staged": "^15.2.10",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.2",
 		"sass-embedded": "^1.82.0",
+		"simple-git-hooks": "^2.11.1",
 		"svelte": "^5.7.1",
 		"svelte-check": "^4.1.1",
 		"typescript": "^5.7.2",
 		"typescript-eslint": "^8.17.0",
 		"unocss": "^0.65.1",
 		"vite": "^6.0.3"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"allowAny": ["*"],
+			"ignoreMissing": ["*"]
+		}
+	},
+	"simple-git-hooks": {
+		"pre-commit": "npx lint-staged"
+	},
+	"lint-staged": {
+		"*": ["prettier --write .", "eslint . --fix --cache"]
 	}
 }
